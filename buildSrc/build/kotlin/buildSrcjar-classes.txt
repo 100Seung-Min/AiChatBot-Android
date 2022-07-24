@@ -1,0 +1,1 @@
+C:\Users\user\Documents\GitHub\AiChatBot-Android\buildSrc\build\classes\kotlin\main\Dependency$GradlePlugin.class;C:\Users\user\Documents\GitHub\AiChatBot-Android\buildSrc\build\classes\kotlin\main\Dependency.class;C:\Users\user\Documents\GitHub\AiChatBot-Android\buildSrc\build\classes\kotlin\main\Versions.class
