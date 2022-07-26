@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AiChatBot-Android"
-include ':presentation'
-include ':domain'
-include ':data'
+include(":presentation")
+include(":domain")
+include(":data")
