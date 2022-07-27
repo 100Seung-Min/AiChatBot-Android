@@ -5,7 +5,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.aichatbot_android.R
 import com.example.aichatbot_android.databinding.FragmentChatBinding
 import com.example.aichatbot_android.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
     override fun init() {
         binding.chatFragment = this
