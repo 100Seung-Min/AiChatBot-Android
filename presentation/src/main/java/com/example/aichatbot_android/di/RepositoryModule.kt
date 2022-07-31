@@ -1,6 +1,7 @@
 package com.example.aichatbot_android.di
 
 import com.example.data.remote.datasource.WikiDataSource
+import com.example.data.remote.datasource.WikiDataSourceImpl
 import com.example.data.repository.WikiRepositoryImpl
 import com.example.domain.repository.WikiRepository
 import dagger.Module
@@ -14,5 +15,5 @@ import javax.inject.Singleton
 object RepositoryModule {
     @Provides
     @Singleton
-    fun provideWikiRepository(dataSource: WikiDataSource): WikiRepository = WikiRepositoryImpl(dataSource)
+    fun provideWikiRepository(dataSource: WikiDataSourceImpl): WikiRepository = WikiRepositoryImpl(dataSource)
 }
