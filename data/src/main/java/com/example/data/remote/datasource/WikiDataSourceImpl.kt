@@ -9,6 +9,6 @@ class WikiDataSourceImpl @Inject constructor(
     private val wikiAPI: WikiAPI
 ): WikiDataSource {
     override suspend fun wikiQA(wikiRequest: WikiRequest): WikiResponse {
-        return wikiAPI.wikiQA(wikiRequest)
+        return wikiAPI.wikiQA(wikiRequest = wikiRequest)
     }
 }
