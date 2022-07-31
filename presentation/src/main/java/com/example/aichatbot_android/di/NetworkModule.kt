@@ -1,5 +1,6 @@
 package com.example.aichatbot_android.di
 
+import com.example.data.remote.api.WikiAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,5 +45,11 @@ object NetworkModule {
     @Singleton
     fun provideConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideWikiService(retrofit: Retrofit): WikiAPI {
+        return retrofit.create(WikiAPI::class.java)
     }
 }
