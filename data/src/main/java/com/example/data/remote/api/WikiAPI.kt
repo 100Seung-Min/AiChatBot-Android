@@ -9,7 +9,7 @@ import retrofit2.http.POST
 interface WikiAPI {
 
     @POST("WikiQA")
-    suspend fun WikiQA(
+    suspend fun wikiQA(
         @Body wikiRequest: WikiRequest
     ): WikiResponse
 }
