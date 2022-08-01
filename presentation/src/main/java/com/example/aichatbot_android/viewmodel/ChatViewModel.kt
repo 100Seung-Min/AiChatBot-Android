@@ -1,6 +1,5 @@
 package com.example.aichatbot_android.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -30,7 +29,7 @@ class ChatViewModel @Inject constructor(
             viewModelScope.launch {
                 val response = wikiQAUseCase.execute(wikiParam = WikiParam(
                     access_key = ACCESS_KEY,
-                    argument = WikiParam.Question(
+                    argument = WikiParam.Argument(
                         question = question,
                         type = "hybridqa"
                     )

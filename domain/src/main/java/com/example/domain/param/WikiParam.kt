@@ -2,9 +2,9 @@ package com.example.domain.param
 
 data class WikiParam(
     val access_key: String,
-    val argument: Question
+    val argument: Argument
 ) {
-    data class Question(
+    data class Argument(
         val question: String,
         val type: String
     )

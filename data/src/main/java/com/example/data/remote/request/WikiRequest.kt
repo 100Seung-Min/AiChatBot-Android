@@ -7,9 +7,9 @@ data class WikiRequest(
     @SerializedName("access_key")
     val access_key: String,
     @SerializedName("argument")
-    val argument: Question
+    val argument: Argument
 ) {
-    data class Question(
+    data class Argument(
         @SerializedName("question")
         val question: String,
         @SerializedName("type")
@@ -22,7 +22,7 @@ fun WikiParam.toRequest() = WikiRequest(
     argument = argument.toRequest()
 )
 
-fun WikiParam.Question.toRequest() = WikiRequest.Question(
+fun WikiParam.Argument.toRequest() = WikiRequest.Argument(
     question = question,
     type = type
 )
