@@ -5,7 +5,6 @@ data class LawParam(
     val argument: Argument
 ) {
     data class Argument(
-        val question: String,
-        val type: String
+        val question: String
     )
 }
