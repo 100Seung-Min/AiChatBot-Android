@@ -16,10 +16,28 @@ class ChatViewModel @Inject constructor(
     private val wikiQAUseCase: WikiQAUseCase
 ): ViewModel() {
 
+    private val ACCESS_KEY = "24049d6a-b054-4a8d-909d-af913c5e2bba"
+
     private val _chatType = MutableLiveData<String>()
     val chatType: LiveData<String> get() = _chatType
 
     fun setChatType(type: String) {
         _chatType.value = type
+    }
+
+    fun wikiQA(question: String) {
+        try {
+            viewModelScope.launch {
+                val response = wikiQAUseCase.execute(wikiParam = WikiParam(
+                    access_key = ACCESS_KEY,
+                    argument = WikiParam.Question(
+                        question = question,
+                        type = "hybridqa"
+                    )
+                ))
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }
