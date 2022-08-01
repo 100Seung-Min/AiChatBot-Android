@@ -9,7 +9,7 @@ data class LawEntity(
     ) {
         data class LegalInfo(
             val answerInfo: List<AnswerInfo>,
-            val RelatedQs: List<String>
+            val relatedQs: List<String>
         ) {
             data class AnswerInfo(
                 val rank: Float,
