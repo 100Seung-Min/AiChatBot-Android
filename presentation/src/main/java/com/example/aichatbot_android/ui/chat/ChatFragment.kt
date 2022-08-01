@@ -29,6 +29,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
         }
         when (viewModel.chatType.value) {
             "위키박사" -> viewModel.wikiQA(text.toString())
+            "법률박사" -> viewModel.lawQA(text.toString())
         }
         text.clear()
         hide()
