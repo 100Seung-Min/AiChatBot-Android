@@ -14,13 +14,41 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
-        <Button
-            android:id="@+id/WikiChatBtn"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btnLeftGuide"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/btnRightGuide"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/WikiChatBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="위키박사에게 물어보기"
             android:onClick="@{homeFragment::moveChat}"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btnRightGuide"
+            app:layout_constraintStart_toStartOf="@id/btnLeftGuide" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/LawChatBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="법률박사에게 물어보기"
+            android:onClick="@{homeFragment::moveChat}"
+            app:layout_constraintEnd_toEndOf="@id/btnRightGuide"
+            app:layout_constraintStart_toStartOf="@id/btnLeftGuide"
+            app:layout_constraintTop_toBottomOf="@id/WikiChatBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
