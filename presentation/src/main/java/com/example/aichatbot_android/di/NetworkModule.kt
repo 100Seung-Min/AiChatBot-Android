@@ -1,5 +1,6 @@
 package com.example.aichatbot_android.di
 
+import com.example.data.remote.api.LawAPI
 import com.example.data.remote.api.WikiAPI
 import dagger.Module
 import dagger.Provides
@@ -51,5 +52,11 @@ object NetworkModule {
     @Singleton
     fun provideWikiService(retrofit: Retrofit): WikiAPI {
         return retrofit.create(WikiAPI::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideLawService(retrofit: Retrofit): LawAPI {
+        return retrofit.create(LawAPI::class.java)
     }
 }
