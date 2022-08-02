@@ -21,7 +21,6 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
         binding.chatFragment = this
         binding.viewModel = viewModel
         textWriting()
-        observeResult()
     }
 
     private fun observeResult() = when(viewModel.chatType.value!!) {
@@ -39,6 +38,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
             ChatType.WIKI -> viewModel.wikiQA(text.toString())
             ChatType.LAW -> viewModel.lawQA(text.toString())
         }
+        observeResult()
         hide()
     }
 
