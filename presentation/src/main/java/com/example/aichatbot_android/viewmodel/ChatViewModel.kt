@@ -1,10 +1,10 @@
 package com.example.aichatbot_android.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.aichatbot_android.util.ChatType
 import com.example.domain.entity.LawEntity
 import com.example.domain.entity.WikiEntity
 import com.example.domain.param.LawParam
@@ -23,8 +23,8 @@ class ChatViewModel @Inject constructor(
 
     private val ACCESS_KEY = "24049d6a-b054-4a8d-909d-af913c5e2bba"
 
-    private val _chatType = MutableLiveData<String>()
-    val chatType: LiveData<String> get() = _chatType
+    private val _chatType = MutableLiveData<ChatType>()
+    val chatType: LiveData<ChatType> get() = _chatType
 
     private val _wikiResult = MutableLiveData<List<WikiEntity.ReturnObject.WiKiInfo.AnswerInfo>>()
     val wikiResult: LiveData<List<WikiEntity.ReturnObject.WiKiInfo.AnswerInfo>> get() = _wikiResult
@@ -32,7 +32,7 @@ class ChatViewModel @Inject constructor(
     private val _lawResult = MutableLiveData<List<LawEntity.ReturnObject.LegalInfo.AnswerInfo>>()
     val lawResult: LiveData<List<LawEntity.ReturnObject.LegalInfo.AnswerInfo>> get() = _lawResult
 
-    fun setChatType(type: String) {
+    fun setChatType(type: ChatType) {
         _chatType.value = type
     }
 

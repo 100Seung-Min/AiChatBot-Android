@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:textSize="30sp"
-            android:text="@{viewModel.chatType}"
+            android:text="@{viewModel.chatType.chatName}"
             android:textColor="@color/white"
             android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
