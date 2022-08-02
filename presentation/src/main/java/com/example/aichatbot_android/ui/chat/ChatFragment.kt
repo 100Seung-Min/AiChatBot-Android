@@ -39,7 +39,6 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
             ChatType.WIKI -> viewModel.wikiQA(text.toString())
             ChatType.LAW -> viewModel.lawQA(text.toString())
         }
-        text.clear()
         hide()
     }
 
