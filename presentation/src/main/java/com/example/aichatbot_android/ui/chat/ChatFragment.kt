@@ -3,6 +3,7 @@ package com.example.aichatbot_android.ui.chat
 import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.example.aichatbot_android.R
@@ -21,6 +22,15 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
         binding.chatFragment = this
         binding.viewModel = viewModel
         textWriting()
+        observeResult()
+    }
+
+    private fun observeResult() = when(viewModel.chatType.value) {
+        "위키박사" -> viewModel.wikiResult.observe(this) {
+        }
+        "법률박사" -> viewModel.lawResult.observe(this) {
+        }
+        else -> Unit
     }
 
     fun sendBtn(view: View) = with(binding.userChatTxt) {
