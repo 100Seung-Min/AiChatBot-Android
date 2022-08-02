@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.aichatbot_android.R
 import com.example.aichatbot_android.databinding.FragmentChatBinding
 import com.example.aichatbot_android.ui.base.BaseFragment
+import com.example.aichatbot_android.ui.extension.afterTextChanged
 import com.example.aichatbot_android.ui.extension.hide
 import com.example.aichatbot_android.viewmodel.ChatViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,14 +47,8 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(R.layout.fragment_chat) {
     }
 
     private fun textWriting() = with(binding) {
-        userChatTxt.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) = Unit
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) = Unit
-
-            override fun afterTextChanged(p0: Editable?) {
-                sendBtn.setTextColor(Color.parseColor(if (userChatTxt.text.toString().isNullOrEmpty()) "#B4B4B4" else "#3182F7"))
-            }
-        })
+        userChatTxt.afterTextChanged {
+            sendBtn.setTextColor(Color.parseColor(if (it.toString().isNullOrEmpty()) "#B4B4B4" else "#3182F7"))
+        }
     }
 }
